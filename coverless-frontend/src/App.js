@@ -11,7 +11,7 @@ function App() {
       <h1>Coverless</h1>
       <h3>Don't pick a book by its cover.</h3>
 
-      <BookContainer />      
+      <BookContainer />    
     </div>
   );
 }

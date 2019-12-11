@@ -7,7 +7,6 @@ export default class Navbar extends React.Component {
             <nav className="navbar navbar-light">
               <button>My Books</button>
               <button>Discover</button>
-              <button>Reading History</button>
               <button>Friends Feed</button>
             </nav>
         )

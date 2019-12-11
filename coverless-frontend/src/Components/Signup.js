@@ -7,7 +7,8 @@ export default class Signup extends React.Component {
     }
 
     handleOnSubmit = () => {
-
+      // POST /users/new route
+        //hit users#create in UsersController
     }
 
     handleOnChange = () => {

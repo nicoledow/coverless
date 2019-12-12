@@ -44,26 +44,6 @@ class BookContainer extends React.Component {
     }
 }
 
-// render() {
-//     if (this.state.latitude != '' && this.state.longitude != '') {
-//       var weatherComponent = <Weather latitude={ this.state.latitude } longitude={ this.state.longitude } />
-//     } else {
-//       var weatherComponent = null;
-//     }
-
-//     return (
-//         <div className="container">
-//             <div className="header-container">
-//                 {weatherComponent}
-//             <DateTime />
-//             </div>
-//             <div className="welcome-container">
-//                 <Welcome name="Name" />
-//             </div>
-//       </div>
-//     );
-//   }
-
 
 const mapStateToProps = state => {
   return { books: state.books }

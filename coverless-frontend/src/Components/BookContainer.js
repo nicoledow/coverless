@@ -4,27 +4,55 @@ import fetchBooks from '../actions/fetchBooks';
 import Book from './Book';
 
 class BookContainer extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            likedBooks: [],
+            rejectedBooks: [],
+            currentBookIndex: 0
+        }
+    }
 
     componentDidMount(){
         this.props.fetchBooks();
     }
 
+    //clean this up???
     render() {
-        return (
-            <div className="card">
-              <Book />
-            </div>
-        )
+        const currentBook = this.props.books[this.state.currentBookIndex];
+        if (currentBook) {
+            return ( <Book book={currentBook} currentBookIndex={this.state.currentBookIndex} /> )
+        } else {
+            return null;
+        }
     }
 }
+
+// render() {
+//     if (this.state.latitude != '' && this.state.longitude != '') {
+//       var weatherComponent = <Weather latitude={ this.state.latitude } longitude={ this.state.longitude } />
+//     } else {
+//       var weatherComponent = null;
+//     }
+
+//     return (
+//         <div className="container">
+//             <div className="header-container">
+//                 {weatherComponent}
+//             <DateTime />
+//             </div>
+//             <div className="welcome-container">
+//                 <Welcome name="Name" />
+//             </div>
+//       </div>
+//     );
+//   }
+
 
 const mapStateToProps = state => {
   return { books: state.books }
 }
 
-// function mapDispatchToProps(dispatch){
-//     return { fetchAstronauts: () => dispatch(fetchAstronauts()) }
-//   }
 
 const mapDispatchToProps = dispatch => {
     return { fetchBooks: () => dispatch(fetchBooks()) }

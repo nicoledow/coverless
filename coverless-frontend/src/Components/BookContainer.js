@@ -18,9 +18,6 @@ class BookContainer extends React.Component {
         this.props.fetchBooks();
     }
 
-    componentDidUpdate() {
-        console.log('componentDidUpdate', this.state);
-    }
 
     likeBook = () => {
       this.setState({ likedBooks: [...this.state.likedBooks, this.props.books[this.state.currentBookIndex]] })

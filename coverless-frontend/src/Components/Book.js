@@ -10,6 +10,8 @@ export default class Book extends React.Component {
         return (
             <div className="card-content">
                 <h3>{this.props.book.title}</h3>
+                <h4> by {this.props.book.author}</h4>
+                <p>{this.props.book.description}</p>
             </div>
         )
     }

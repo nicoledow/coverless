@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  post '/login', to: 'sessions#create'
+  post '/users', to: 'users#create'
 end

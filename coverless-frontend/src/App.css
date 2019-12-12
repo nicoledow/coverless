@@ -1,3 +1,15 @@
+/*Color Scheme:
+teal: #0FA3B1
+light seafoam: #D9E5D6
+yellow cream: #EADEA4
+peach: #F7AO72 - O or 0?
+orange: #FF9B42
+*/
+
+#root, footer {
+  background-color: #D9E5D6;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +47,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.card-content {
+  background-color: #0FA3B1;
+}
+
+h1 {
+  color: #FF9B42
 }

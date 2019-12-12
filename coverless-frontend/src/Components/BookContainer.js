@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import fetchBooks from '../actions/fetchBooks';
+import Book from './Book';
 
 class BookContainer extends React.Component {
 
@@ -11,7 +12,7 @@ class BookContainer extends React.Component {
     render() {
         return (
             <div className="card">
-            <p>BookContainer</p>
+              <Book />
             </div>
         )
     }

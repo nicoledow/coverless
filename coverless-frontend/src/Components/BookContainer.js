@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import fetchBooks from '../actions/fetchBooks';
 import Book from './Book';
-import ReactionButtons from './ReactionButtons';
 
 class BookContainer extends React.Component {
     constructor() {
@@ -27,7 +26,7 @@ class BookContainer extends React.Component {
       this.setState({ rejectedBooks: [...this.state.rejectedBooks, this.props.books[this.state.currentBookIndex]] })
     }
 
-    //clean this up???
+   
     render() {
         const currentBook = this.props.books[this.state.currentBookIndex];
         if (currentBook) {

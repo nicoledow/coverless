@@ -18,11 +18,13 @@ class BookContainer extends React.Component {
     }
 
 
-    likeBook = () => {
-      this.setState({ likedBooks: [...this.state.likedBooks, this.props.books[this.state.currentBookIndex]] })
+    handleLikeBook = book => {
+        //dispatch 'LIKE_BOOK' with the book passed in
+        //add liked: true key to book obj
+        this.props.likeBook(book);
     }
 
-    rejectBook = () => {
+    handleRejectBook = () => {
       this.setState({ rejectedBooks: [...this.state.rejectedBooks, this.props.books[this.state.currentBookIndex]] })
     }
 
@@ -32,8 +34,8 @@ class BookContainer extends React.Component {
         if (currentBook) {
             return ( <Book book={currentBook} 
                      currentBookIndex={this.state.currentBookIndex} 
-                     handleLikeBook={this.likeBook}
-                     handleRejectBook={this.rejectBook} /> )
+                     handleLikeBook={this.handleLikeBook}
+                     handleRejectBook={this.handleRejectBook} /> )
         } else {
             return null;
         }
@@ -47,7 +49,10 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = dispatch => {
-    return { fetchBooks: () => dispatch(fetchBooks()) }
+    return { 
+        fetchBooks: () => dispatch(fetchBooks()), 
+        likeBook: book => dispatch({ type: 'LIKE_BOOK', book })
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookContainer);

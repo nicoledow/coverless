@@ -20,9 +20,7 @@ class BookContainer extends React.Component {
 
 
     handleLikeBook = book => {
-        //dispatch 'LIKE_BOOK' with the book passed in
-        //add liked: true key to book obj
-        postLikedBook(book);
+        this.props.postLikedBook(book);
     }
 
     handleRejectBook = () => {
@@ -51,7 +49,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return { 
-        fetchBooks: () => dispatch(fetchBooks()), 
+        fetchBooks: () => dispatch(fetchBooks()),
+        postLikedBook: book => dispatch(postLikedBook(book)) 
     }
 }
 

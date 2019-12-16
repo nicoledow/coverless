@@ -1,3 +1,5 @@
+require 'pry'
+
 class LikedbooksController < ApplicationController
 
     def create
@@ -13,7 +15,6 @@ class LikedbooksController < ApplicationController
     end
 
     def index
-        binding.pry
         liked_books = LikedBook.all
         render json: liked_books
     end

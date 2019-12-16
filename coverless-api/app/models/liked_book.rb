@@ -1,2 +1,0 @@
-class LikedBook < ApplicationRecord
-end

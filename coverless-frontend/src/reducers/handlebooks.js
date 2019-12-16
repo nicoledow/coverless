@@ -12,7 +12,7 @@ const handleBooks = (state = { books: [], requesting: false }, action) => {
             console.log('made it to reducer - addlikedbook')
             console.log('action.book data', action.book)
         case 'LIKE_BOOK':
-            const likedBook = state.books.find(b => b.isbns[0].isbn10 === action.book.isbns[0].isbn10)
+            const likedBook = state.books.find(b => b.primary_isbn10 === action.book.primary_isbn10)
             likedBook.liked = true;
             return {...state, books: [...state.books, likedBook] }
         case 'ADD_USER':

@@ -10,7 +10,7 @@ const postLikedBook = book => {
               "Content-Type": "application/json",
               "Accept": "application/json"
           },
-          body: JSON.stringify({ "title": book.title })
+          body: JSON.stringify(book)
         })
         .then(function(response){
             return response.json();

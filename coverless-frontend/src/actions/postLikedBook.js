@@ -4,7 +4,7 @@ const postLikedBook = book => {
     return (dispatch) => {
         dispatch({ type: 'START_ADDING_LIKED_BOOK' });
         console.log('did 1st dispatch')
-        fetch(`${BASE_URL}/likedbooks`, {
+        fetch(`${BASE_URL}likedbooks`, {
           method: "POST",
           headers: {
               "Content-Type": "application/json",

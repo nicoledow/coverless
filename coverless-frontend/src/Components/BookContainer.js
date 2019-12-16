@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import fetchBooks from '../actions/fetchBooks';
+import postLikedBook from '../actions/postLikedBook';
 import Book from './Book';
 
 class BookContainer extends React.Component {
@@ -21,7 +22,7 @@ class BookContainer extends React.Component {
     handleLikeBook = book => {
         //dispatch 'LIKE_BOOK' with the book passed in
         //add liked: true key to book obj
-        this.props.likeBook(book);
+        postLikedBook(book);
     }
 
     handleRejectBook = () => {
@@ -51,7 +52,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return { 
         fetchBooks: () => dispatch(fetchBooks()), 
-        likeBook: book => dispatch({ type: 'LIKE_BOOK', book })
     }
 }
 

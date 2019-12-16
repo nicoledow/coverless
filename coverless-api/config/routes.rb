@@ -1,7 +1,3 @@
 Rails.application.routes.draw do
-
-  get '/books', to: 'books#index'
-
-  post '/likedbooks', to: 'likedbooks#create'
-  get '/likedbooks', to: 'likedbooks#index'
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -16,6 +16,7 @@ const postLikedBook = book => {
             return response.json();
         })
         .then(function(bookData){
+            console.log('result of fetch post', bookData);
             dispatch({ type: 'ADD_LIKED_BOOK', book: bookData })
         })
         .catch(function(error){

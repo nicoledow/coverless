@@ -11,10 +11,15 @@ const handleBooks = (state = { books: [], requesting: false }, action) => {
         case 'ADD_LIKED_BOOK':
             console.log('made it to reducer - addlikedbook')
             console.log('action.book data', action.book)
-        case 'LIKE_BOOK':
-            const likedBook = state.books.find(b => b.primary_isbn10 === action.book.primary_isbn10)
+            let likedBook = state.books.find(b => b.primary_isbn10 === action.book.isbn)
+            console.log('likedBook', likedBook)
             likedBook.liked = true;
-            return {...state, books: [...state.books, likedBook] }
+            console.log('updated state', state)
+            return {...state}
+        // case 'LIKE_BOOK':
+        //     const likedBook = state.books.find(b => b.primary_isbn10 === action.book.primary_isbn10)
+        //     likedBook.liked = true;
+        //     return {...state, books: [...state.books, likedBook] }
         case 'ADD_USER':
             return {...state, currentUser: action.user }
         default:

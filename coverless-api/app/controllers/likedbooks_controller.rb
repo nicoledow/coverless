@@ -3,7 +3,6 @@ require 'pry'
 class LikedbooksController < ApplicationController
 
     def create
-        binding.pry
         liked_book = LikedBook.new(
             isbn: liked_book_params["primary_isbn10"], 
             title: liked_book_params["title"], 

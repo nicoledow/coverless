@@ -27,17 +27,29 @@ class BookContainer extends React.Component {
       this.setState({ rejectedBooks: [...this.state.rejectedBooks, this.props.books[this.state.currentBookIndex]] })
     }
 
+    renderBooks = books => {
+      books.map((b, idx) => {
+          <li><Book book={b} handleLikeBook={this.handleLikeBook} handleRejectBook={this.handleRejectBook} /></li>
+      })
+    }
+
    
     render() {
-        const currentBook = this.props.books[this.state.currentBookIndex];
-        if (currentBook) {
-            return ( <Book book={currentBook} 
-                     currentBookIndex={this.state.currentBookIndex} 
-                     handleLikeBook={this.handleLikeBook}
-                     handleRejectBook={this.handleRejectBook} /> )
-        } else {
-            return null;
-        }
+        console.log('books from state in BookContainer', this.props.books)
+        // const currentBook = this.props.books[this.state.currentBookIndex];
+        // if (currentBook) {
+        //     return ( <Book book={currentBook} 
+        //              currentBookIndex={this.state.currentBookIndex} 
+        //              handleLikeBook={this.handleLikeBook}
+        //              handleRejectBook={this.handleRejectBook} /> )
+        // } else {
+        //     return null;
+        // }
+        <div>
+          <ul>
+            {renderBooks(this.props.books)}
+          </ul>
+        </div>
     }
 }
 

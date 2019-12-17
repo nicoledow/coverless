@@ -12,7 +12,7 @@ class ListButton extends React.Component {
     render() {
         console.log('list props', this.props)
         return (
-            <button onClick={this.handleClick}>{this.props.list.display_name}</button>
+            <button className="btn btn-info" onClick={this.handleClick}>{this.props.list.display_name}</button>
         )
     }
 }

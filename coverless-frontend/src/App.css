@@ -53,6 +53,11 @@ orange: #FF9B42
   background-color: #0FA3B1;
 }
 
+.btn {
+  padding: 0.8em;
+  margin: 0.8em;
+}
+
 h1 {
   color: #FF9B42
 }

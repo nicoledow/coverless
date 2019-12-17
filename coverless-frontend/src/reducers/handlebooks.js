@@ -19,8 +19,6 @@ const handleBooks = (state = { books: [], lists: [], currentList: '', requesting
             return {...state}
         case 'ADD_USER':
             return {...state, currentUser: action.user }
-        case 'UPDATE_CURRENT_LIST':
-          return {...state, currentList: action.listName }
         default:
             return state;
     }

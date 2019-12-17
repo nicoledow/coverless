@@ -10,6 +10,7 @@ class ListButton extends React.Component {
     }
 
     handleClick = () => {
+        console.log('buttons props', this.props)
       this.props.getBooks(this.props.list.list_name_encoded)
       this.setState({ toBookContainer: true })
     }

@@ -10,13 +10,19 @@ class ListsContainer extends React.Component {
  
     render() {
         console.log('lists container props', this.props)
-        return (
-            <ul>
-              {this.props.lists.map(list => {
-                return <li><ListButton list={list} /></li>
-              })}
-            </ul>
-        )
+        if (this.props.lists) {
+            if (this.props.lists.length >= 1) {
+                return (
+                    <ul>
+                        {this.props.lists.map(list => {
+                            return <li><ListButton list={list}/></li>
+                        })}
+                    </ul>
+                )
+            } else {
+                return <p>Loading lists...</p>
+            }
+        }
     }
 }
 

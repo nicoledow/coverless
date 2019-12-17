@@ -4,6 +4,10 @@ const handleBooks = (state = { books: [], requesting: false }, action) => {
             return {...state, requesting: true }
         case 'START_ADDING_BOOKS_REQ':
             return {...state, books: [...state.books], requesting: true}
+        case 'START_FETCHING_LISTS':
+            return {...state, requesting: true }
+        case 'DISPLAY_LIST_OPTIONS':
+            return {...state, requesting: false, lists: action.listData }
         case 'ADD_BOOKS':
             return {...state, books: [...state.books, action.books], requesting: false }
         case 'START_ADDING_LIKED_BOOK':

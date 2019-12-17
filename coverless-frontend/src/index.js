@@ -11,11 +11,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = createStore(handleBooks, applyMiddleware(thunk));
 
+
 const BASE_URL = 'http://localhost:3000/';
 
 ReactDOM.render(
 <Provider store={store}>
-<App />
+  <App />
 </Provider>,
 document.getElementById('root'));
 

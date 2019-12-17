@@ -10,7 +10,7 @@ class ListButton extends React.Component {
     }
 
     handleClick = () => {
-        console.log('buttons props', this.props)
+        console.log('in handleClick listButton', this.props.list.list_name_encoded)
       this.props.getBooks(this.props.list.list_name_encoded)
       this.setState({ toBookContainer: true })
     }
@@ -30,7 +30,7 @@ class ListButton extends React.Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getBooks: listTitle => dispatch(fetchBooks(listTitle))
+        getBooks: listName => dispatch(fetchBooks(listName))
     }
 }
 

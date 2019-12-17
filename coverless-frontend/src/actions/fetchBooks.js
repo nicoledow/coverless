@@ -7,5 +7,6 @@ export default function fetchBooks(listName) {
         .then(booksData => {
             dispatch({ type: 'ADD_BOOKS', books: booksData.results.books })
         })
+        .then(dispatch({ type: 'UPDATE_CURRENT_LIST', listName }))
     };
 }

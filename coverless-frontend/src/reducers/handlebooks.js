@@ -1,4 +1,4 @@
-const handleBooks = (state = { books: [], lists: [], requesting: false }, action) => {
+const handleBooks = (state = { books: [], lists: [], currentList: '', requesting: false }, action) => {
     switch(action.type){
         case 'START_FETCHING_NEW_USER_REQ':
             return {...state, requesting: true }
@@ -19,6 +19,8 @@ const handleBooks = (state = { books: [], lists: [], requesting: false }, action
             return {...state}
         case 'ADD_USER':
             return {...state, currentUser: action.user }
+        case 'UPDATE_CURRENT_LIST':
+          return {...state, currentList: action.listName }
         default:
             return state;
     }

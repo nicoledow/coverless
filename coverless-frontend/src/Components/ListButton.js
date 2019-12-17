@@ -6,18 +6,18 @@ import fetchBooks from '../actions/fetchBooks';
 class ListButton extends React.Component {
     constructor() {
         super();
-        this.state = { toBookContainer: false }
+        this.state = { toBooksContainer: false }
     }
 
     handleClick = () => {
         console.log('in handleClick listButton', this.props.list.list_name_encoded)
       this.props.getBooks(this.props.list.list_name_encoded)
-      this.setState({ toBookContainer: true })
+      this.setState({ toBooksContainer: true })
     }
 
     render() {
         console.log(this.props)
-        if (this.state.toBookContainer === true ) {
+        if (this.state.toBooksContainer === true ) {
             return <Redirect to="/books" />
         }
         return (

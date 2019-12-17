@@ -1,5 +1,5 @@
 export default function fetchBooks(listName) {
-    console.log('list name', listName)
+    console.log('list name in fetchBooks', listName)
     return (dispatch) => {
         dispatch({ type: 'START_ADDING_BOOKS_REQ' });
         fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${listName}.json?api-key=wTKFIAS8RlozOV97WtdavvcQJ0zfalZD`)

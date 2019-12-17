@@ -1,6 +1,7 @@
 import React from 'react';
 import fetchLists from '../actions/fetchLists';
 import { connect } from 'react-redux';
+import ListButton from '../Components/ListButton';
 
 class ListsContainer extends React.Component {
     componentDidMount () {
@@ -10,7 +11,11 @@ class ListsContainer extends React.Component {
     render() {
         console.log('lists container props', this.props)
         return (
-            <p>Lists Component</p>
+            <ul>
+              {this.props.lists.map(list => {
+                return <li><ListButton list={list} /></li>
+              })}
+            </ul>
         )
     }
 }

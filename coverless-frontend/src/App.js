@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './Components/Navbar';
-import BookContainer from './Components/BookContainer';
+import BooksContainer from './Containers/BooksContainer';
 import ListsContainer from './Containers/ListsContainer';
 import Header from './Components/Header';
 import ReactDOM from 'react-dom';
@@ -17,7 +17,7 @@ function App() {
 
         <Router >
           <Route exact path="/" component={ListsContainer} />
-          <Route exact path="/books" component={BookContainer} />
+          <Route exact path="/books" component={BooksContainer} />
         </Router>
 
     </div>

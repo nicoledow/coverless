@@ -4,7 +4,7 @@ import fetchBooks from '../actions/fetchBooks';
 import postLikedBook from '../actions/postLikedBook';
 import Book from '../Components/Book';
 
-class BookContainer extends React.Component {
+class BooksContainer extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -42,7 +42,7 @@ class BookContainer extends React.Component {
 
 
 const mapStateToProps = state => {
-  return { books: state.books }
+  return { books: state.books, currentList: state.currentList }
 }
 
 

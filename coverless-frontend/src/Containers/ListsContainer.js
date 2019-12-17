@@ -8,10 +8,15 @@ class ListsContainer extends React.Component {
     }
  
     render() {
+        console.log('lists container props', this.props)
         return (
             <p>Lists Component</p>
         )
     }
+}
+
+const mapStateToProps = state => {
+    return { lists: state.lists }
 }
 
 const mapDispatchToProps = dispatch => {
@@ -20,4 +25,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(ListsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ListsContainer);

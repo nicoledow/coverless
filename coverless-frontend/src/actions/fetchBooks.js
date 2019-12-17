@@ -5,8 +5,7 @@ export default function fetchBooks(listName) {
         fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${listName}.json?api-key=wTKFIAS8RlozOV97WtdavvcQJ0zfalZD`)
         .then(response => response.json())
         .then(booksData => {
-            dispatch({ type: 'ADD_BOOKS', books: booksData.results.books })
+            dispatch({ type: 'ADD_BOOKS', books: booksData.results.books, listName })
         })
-        .then(dispatch({ type: 'UPDATE_CURRENT_LIST', listName }))
     };
 }

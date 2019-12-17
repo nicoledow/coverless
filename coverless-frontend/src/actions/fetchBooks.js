@@ -6,6 +6,5 @@ export default function fetchBooks(listName) {
         .then(booksData => {
             dispatch({ type: 'ADD_BOOKS', books: booksData.results.books })
         })
-        //.then(booksData => console.log('completed fetch', booksData))
     };
 }

@@ -17,10 +17,6 @@ const handleBooks = (state = { books: [], lists: [], requesting: false }, action
             let likedBook = state.books.find(b => b.primary_isbn10 === action.book.isbn)
             likedBook.liked = true;
             return {...state}
-        // case 'LIKE_BOOK':
-        //     const likedBook = state.books.find(b => b.primary_isbn10 === action.book.primary_isbn10)
-        //     likedBook.liked = true;
-        //     return {...state, books: [...state.books, likedBook] }
         case 'ADD_USER':
             return {...state, currentUser: action.user }
         default:

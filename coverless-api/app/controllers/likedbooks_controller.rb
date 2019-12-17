@@ -3,6 +3,7 @@ require 'pry'
 class LikedbooksController < ApplicationController
 
     def create
+      #binding.pry
         liked_book = LikedBook.new(
             isbn: liked_book_params["primary_isbn10"], 
             title: liked_book_params["title"], 
@@ -14,7 +15,7 @@ class LikedbooksController < ApplicationController
         if liked_book.save
           render json: liked_book
         else
-          alert("An error occurred. Please try again.")
+          binding.pry
         end
     end
 

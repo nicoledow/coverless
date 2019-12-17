@@ -5,7 +5,6 @@ const handleBooks = (state = { books: [], requesting: false }, action) => {
         case 'START_ADDING_BOOKS_REQ':
             return {...state, books: [...state.books], requesting: true}
         case 'ADD_BOOKS':
-            console.log('action.books', action.books)
             return {...state, books: [...state.books, action.books], requesting: false }
         case 'START_ADDING_LIKED_BOOK':
             return {...state, requesting: true}

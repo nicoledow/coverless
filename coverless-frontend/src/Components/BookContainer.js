@@ -8,48 +8,35 @@ class BookContainer extends React.Component {
     constructor() {
         super();
         this.state = {
-            likedBooks: [],
-            rejectedBooks: [],
-            currentBookIndex: 0
+            isFetching: false
         }
     }
 
-    componentDidMount(){
+    //loads book data from NYT API
+    componentDidMount() {
+        this.setState({ isFetching: true });
         this.props.fetchBooks();
     }
+ 
 
-
+    //initiates postLikedBook, which starts a post fetch request to API
     handleLikeBook = book => {
         this.props.postLikedBook(book);
     }
 
+    //adds book to rejected array in state
     handleRejectBook = () => {
       this.setState({ rejectedBooks: [...this.state.rejectedBooks, this.props.books[this.state.currentBookIndex]] })
     }
 
-    renderBooks = books => {
-      books.map((b, idx) => {
-          <li><Book book={b} handleLikeBook={this.handleLikeBook} handleRejectBook={this.handleRejectBook} /></li>
-      })
-    }
 
    
     render() {
-        console.log('books from state in BookContainer', this.props.books)
-        // const currentBook = this.props.books[this.state.currentBookIndex];
-        // if (currentBook) {
-        //     return ( <Book book={currentBook} 
-        //              currentBookIndex={this.state.currentBookIndex} 
-        //              handleLikeBook={this.handleLikeBook}
-        //              handleRejectBook={this.handleRejectBook} /> )
-        // } else {
-        //     return null;
-        // }
-        <div>
-          <ul>
-            {renderBooks(this.props.books)}
-          </ul>
-        </div>
+      return(
+          <div>
+              {this.props.books[0] ? this.props.books[0].map(b => <Book data={b} key={b.primary_isbn10} handleLikeBook={this.handleLikeBook} handleRejectBook={this.handleRejectBook} />) : <p>Loading Books...</p>}
+          </div>
+      )
     }
 }
 

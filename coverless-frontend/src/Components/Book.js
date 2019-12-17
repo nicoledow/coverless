@@ -1,4 +1,4 @@
-//has props: currentBookIndex, book (and associated data)
+//has props: book (and associated data), key (primary_isbn10)
 //callback fns: handleLikeBook, handleRejectBook
 
 import React from 'react';
@@ -8,15 +8,14 @@ export default class Book extends React.Component {
 
 
     render() {
-        console.log('Book props', this.props)
+        console.log(this.props)
         return (
-            <div className="card-content">
-                <h3>{this.props.book.title}</h3>
-                <h4> by {this.props.book.author}</h4>
-                <p>{this.props.book.description}</p>
-                <ReactionButtons book={this.props.book} 
-                                 handleLikeBook={this.props.handleLikeBook} 
-                                 handleRejectBook={this.props.handleRejectBook} />
+            <div className="card">
+              <div className="card-header">{this.props.data.title}</div>
+              <div className="card-body">
+                  <p>By {this.props.data.author}</p>
+                  <p>{this.props.data.description}</p>
+              </div>
             </div>
         )
     }

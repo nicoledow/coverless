@@ -4,6 +4,10 @@ import { Redirect } from 'react-router-dom';
 import fetchBooks from '../actions/fetchBooks';
 
 class ListButton extends React.Component {
+    constructor() {
+        super();
+        this.state = { toBooksContainer: false }
+    }
 
     handleClick = () => {
       console.log('in handleClick listButton', this.props)
@@ -11,6 +15,10 @@ class ListButton extends React.Component {
     }
 
     render() {
+        console.log(this.props)
+        if (this.state.toBooksContainer === true ) {
+            return <Redirect to="/books" />
+        }
         return (
             <button className="btn btn-secondary" onClick={this.handleClick}>
                 {this.props.list.display_name}

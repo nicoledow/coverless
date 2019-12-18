@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -11,14 +12,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = createStore(handleBooks, applyMiddleware(thunk));
 
-
 const BASE_URL = 'http://localhost:3000/';
 
+
 ReactDOM.render(
-<Provider store={store}>
-  <App />
-</Provider>,
-document.getElementById('root'));
+  <Provider store={store}>
+    <App />
+  </Provider>, 
+  document.getElementById('root'))
+
 
 
 serviceWorker.unregister();

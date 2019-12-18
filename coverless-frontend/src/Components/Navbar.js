@@ -20,4 +20,16 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+// const Navbar = () => {
+//     return (
+//         <nav className="navbar navbar-light">
+//             <Router>
+//             <Link to="/mybooks"><button>My Books</button></Link>
+//             <button>Browse Lists</button>
+//             <button>Friends Feed</button>
+//             </Router>
+//         </nav>
+//     )
+// }
+
+// export default Navbar;

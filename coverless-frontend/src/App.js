@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './Components/Navbar';
-import BooksContainer from './Containers/BooksContainer';
+import UserBookList from './Containers/UserBookList';
 import ListsContainer from './Containers/ListsContainer';
 import Header from './Components/Header';
 import { connect } from 'react-redux';

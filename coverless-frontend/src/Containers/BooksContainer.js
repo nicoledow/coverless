@@ -28,7 +28,6 @@ class BooksContainer extends React.Component {
         this.props.postLikedBook(book);
     }
 
-    //adds book to rejected array in state
     handleRejectBook = () => {
         this.setState((prevState) => ({
             currentBookIndex: prevState.currentBookIndex + 1
@@ -37,17 +36,19 @@ class BooksContainer extends React.Component {
 
    
     render() {
-      const books = this.props.books[0]
-      let currentBook = books[this.state.currentBookIndex]
-      if (this.state.currentBookIndex < this.props.books.length) {
-      return (
-          <div>
-            { books && currentBook ? <Book data={currentBook} key={currentBook.primary_isbn10} handleLikeBook={this.handleLikeBook} handleRejectBook={this.handleRejectBook} /> : <p>Loading books...</p>}
-          </div>
-      )
-      } else {
-          return (<p>You've finished this list! Pick a new one!</p>)
-      }
+        console.log('bookcontainer props', this.props)
+    //   const books = this.props.books[0];
+    //   let currentBook = books[this.state.currentBookIndex]
+    //   if (this.state.currentBookIndex < this.props.books.length) {
+    //   return (
+    //       <div>
+    //         { books && currentBook ? <Book data={currentBook} key={currentBook.primary_isbn10} handleLikeBook={this.handleLikeBook} handleRejectBook={this.handleRejectBook} /> : <p>Loading books...</p>}
+    //       </div>
+    //   )
+    //   } else {
+    //       return (<p>You've finished this list! Pick a new one!</p>)
+    //   }
+      return <p>BooksContainer</p>
     }
 }
 

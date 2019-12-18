@@ -1,22 +1,27 @@
 import React from 'react';
 import './App.css';
 import Navbar from './Components/Navbar';
-import UserBookList from './Containers/UserBookList';
 import ListsContainer from './Containers/ListsContainer';
-import Header from './Components/Header';
 import { connect } from 'react-redux';
-import ReactDOM from 'react-dom';
-import { Route, Link, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import BooksContainer from './Containers/BooksContainer';
+import MyBooksContainer from './Containers/MyBooksContainer';
 
 class App extends React.Component {
 
   render() {
     return (
       <div className="App">
+        <h1>Coverless</h1>
+        <h2>Don't pick a book by its cover.</h2>
         <Router>
-          <Navbar />
+        <Navbar />      
+        <Switch>
+          <Route exact path='/' component={ListsContainer} />
+          <Route path='/mybooks' component={MyBooksContainer} />
+          <Route path='/books' component={BooksContainer} />
+        </Switch> 
         </Router>
-        <Header />
       </div>
     )
   }

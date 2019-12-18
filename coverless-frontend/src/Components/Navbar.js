@@ -6,17 +6,10 @@ import BooksContainer from '../Containers/BooksContainer';
 
 const Navbar = () => {
     return (
-        <div>
         <nav className="navbar navbar-light">
             <Link to="/mybooks"> <button> My Books </button> </Link>
             <Link to="/"> <button> Browse Lists </button> </Link>
         </nav>
-        <Switch>
-          <Route exact path='/' component={ListsContainer} />
-          <Route path='/mybooks' component={MyBooksContainer} />
-          <Route path='/books' component={BooksContainer} />
-        </Switch> 
-        </div>
     )
 }
 

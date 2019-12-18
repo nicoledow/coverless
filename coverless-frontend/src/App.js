@@ -6,16 +6,17 @@ import ListsContainer from './Containers/ListsContainer';
 import Header from './Components/Header';
 import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Link, Switch, BrowserRouter as Router } from 'react-router-dom';
 
 class App extends React.Component {
 
   render() {
     return (
       <div className="App">
-        <Navbar />
+        <Router>
+          <Navbar />
+        </Router>
         <Header />
-        {this.props.currentList === '' ? <ListsContainer /> : <BooksContainer />}
       </div>
     )
   }

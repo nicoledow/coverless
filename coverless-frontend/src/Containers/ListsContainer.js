@@ -15,7 +15,7 @@ class ListsContainer extends React.Component {
                 return (
                     <ul>
                         {this.props.lists.map(list => {
-                            return <li><ListButton list={list}/></li>
+                            return <li> <ListButton list={list}/> </li>
                         })}
                     </ul>
                 )

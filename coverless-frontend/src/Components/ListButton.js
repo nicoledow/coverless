@@ -10,12 +10,17 @@ class ListButton extends React.Component {
     }
 
     handleClick = () => {
-      console.log('in handleClick listButton', this.props)
-      this.props.getBooks(this.props.list.list_name_encoded)
+      console.log('handle click')
+      this.props.getBooks(this.props.list.list_name_encoded);
+    }
+
+    componentDidUpdate() {
+        if (this.props.requesting === true) {
+            this.setState({ toBooksContainer: true })
+        }
     }
 
     render() {
-        console.log(this.props)
         if (this.state.toBooksContainer === true ) {
             return <Redirect to="/books" />
         }
@@ -30,8 +35,13 @@ class ListButton extends React.Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getBooks: (listName) => dispatch(fetchBooks(listName))
+        getBooks: (listName) => dispatch(fetchBooks(listName)),
+        updateCurrentList: (listName) => dispatch({ type: 'UPDATE_CURRENT_LIST', listName })
     }
 }
 
-export default connect(null, mapDispatchToProps)(ListButton);
+const mapStateToProps = state => {
+    return { books: state.books, requesting: state.requesting }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListButton);

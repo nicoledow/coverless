@@ -9,7 +9,10 @@ import MyBooksContainer from './Containers/MyBooksContainer';
 
 class App extends React.Component {
 
+  
+
   render() {
+    console.log('rendering App')
     return (
       <div className="App">
         <h1>Coverless</h1>

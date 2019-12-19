@@ -2,20 +2,23 @@ import React from 'react';
 import fetchLists from '../actions/fetchLists';
 import { connect } from 'react-redux';
 import ListButton from '../Components/ListButton';
+import fetchBooks from '../actions/fetchBooks';
 
 class ListsContainer extends React.Component {
     componentDidMount () {
         this.props.fetchLists();
     }
+
  
     render() {
-        console.log('lists container props', this.props)
+        //console.log('lists container props', this.props)
+        console.log('rendering ListContainer')
         if (this.props.lists) {
             if (this.props.lists.length >= 1) {
                 return (
                     <ul>
                         {this.props.lists.map(list => {
-                            return <li> <ListButton list={list}/> </li>
+                            return <li> <ListButton list={list} /> </li>
                         })}
                     </ul>
                 )
@@ -27,12 +30,13 @@ class ListsContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-    return { lists: state.lists }
+    return { lists: state.lists, currentList: state.currentList }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchLists: () => dispatch(fetchLists())
+        fetchLists: () => dispatch(fetchLists()),
+        getBooks: listName => dispatch(fetchBooks()),
     }
 }
 

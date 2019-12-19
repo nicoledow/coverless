@@ -9,14 +9,8 @@ class BooksContainer extends React.Component {
     constructor() {
         super();
         this.state = {
-            currentBookIndex: 0
+            currentBookIndex: 0,
         }
-    }
-
-    //loads book data from NYT API
-    componentDidMount() {
-        this.setState({ isFetching: true });
-        this.props.fetchBooks();
     }
 
 
@@ -36,20 +30,25 @@ class BooksContainer extends React.Component {
 
    
     render() {
-        console.log('bookcontainer props', this.props)
-    //   const books = this.props.books[0];
-    //   let currentBook = books[this.state.currentBookIndex]
-    //   if (this.state.currentBookIndex < this.props.books.length) {
-    //   return (
-    //       <div>
-    //         { books && currentBook ? <Book data={currentBook} key={currentBook.primary_isbn10} handleLikeBook={this.handleLikeBook} handleRejectBook={this.handleRejectBook} /> : <p>Loading books...</p>}
-    //       </div>
-    //   )
-    //   } else {
-    //       return (<p>You've finished this list! Pick a new one!</p>)
-    //   }
-      return <p>BooksContainer</p>
-    }
+        console.log('in bookscontainer render', this.props.books[0])
+        //const books = this.props.books[0];
+        //let currentBook = books[this.state.currentBookIndex]
+     
+        // debugger;
+        // if (this.state.currentBookIndex < books.length) {
+        //     // console.log('books', books[0][0])
+        //     // console.log('currentBook', currentBook)
+        // return (
+        //     <div>
+        //       { books && currentBook ? <Book data={currentBook} key={currentBook.primary_isbn10} handleLikeBook={this.handleLikeBook} handleRejectBook={this.handleRejectBook} /> : <p>Loading books...</p>}
+        //     </div>
+        // )
+        // } else {
+        //     return (<p>You've finished this list! Pick a new one!</p>)
+        // }
+    
+        return <p>BooksContainer</p>
+      }
 }
 
 

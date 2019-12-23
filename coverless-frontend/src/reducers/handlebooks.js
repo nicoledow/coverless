@@ -23,6 +23,8 @@ const handleBooks = (state = { books: [], lists: [], currentList: '', likedBooks
         case 'ADD_LIKED_BOOKS':
             console.log('in reducer adding liked books data')
             return {...state, likedBooks: action.likedBooks, requesting: false }
+        case 'START_REMOVE_LIKED_BOOK_REQ':
+            return {...state, requesting: true }
         case 'ADD_USER':
             return {...state, currentUser: action.user }
         case 'UPDATE_CURRENT_LIST':

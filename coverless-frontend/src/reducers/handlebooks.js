@@ -22,8 +22,8 @@ const handleBooks = (state = { books: [], lists: [], currentList: '', likedBooks
         case 'START_REMOVE_LIKED_BOOK_REQ':
             return {...state, requesting: true }
         case 'REMOVE_FROM_LIKED_BOOKS':
-            let likedBooks = state.books.filter(b => b.isbn !== action.isbn)
-            return {...state, books: likedBooks, requesting: false }
+            let filteredLikedBooks = state.likedBooks.filter(b => b.isbn !== action.isbn)
+            return {...state, likedBooks: filteredLikedBooks, requesting: false }
         case 'ADD_USER':
             return {...state, currentUser: action.user }
         case 'UPDATE_CURRENT_LIST':

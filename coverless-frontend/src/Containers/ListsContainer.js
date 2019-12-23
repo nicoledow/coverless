@@ -6,12 +6,11 @@ import fetchBooks from '../actions/fetchBooks';
 
 class ListsContainer extends React.Component {
     componentDidMount () {
-        this.props.fetchLists();
+        this.props.getLists();
     }
 
  
     render() {
-        //console.log('lists container props', this.props)
         console.log('rendering ListContainer')
         if (this.props.lists) {
             if (this.props.lists.length >= 1) {
@@ -35,7 +34,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchLists: () => dispatch(fetchLists()),
+        getLists: () => dispatch(fetchLists()),
         getBooks: listName => dispatch(fetchBooks(listName)),
     }
 }

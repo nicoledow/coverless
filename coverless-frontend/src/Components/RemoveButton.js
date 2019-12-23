@@ -4,8 +4,13 @@ import { connect } from 'react-redux';
 
 class RemoveButton extends React.Component {
 
+    handleClick = () => {
+        console.log('X was clicked');
+        this.props.removeFromLiked(this.props.isbn);
+    }
+
     render() {
-        return <button onClick={this.props.removeFromLiked(this.props.isbn)}>X</button>
+        return <button onClick={this.handleClick}>X</button>
     }
 }
 

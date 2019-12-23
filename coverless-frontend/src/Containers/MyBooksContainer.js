@@ -5,14 +5,16 @@ import { connect } from 'react-redux';
 class MyBooksContainer extends React.Component {
 
     componentDidMount() {
-      console.log('my books container mounted')
-      fetchLikedBooks();
+      console.log('my books container mounted', this.props)
+      //fetchLikedBooks();
+      this.props.getLikedBooks();
     }
 
-    componentDidUpdate() {
-        console.log('my books container updated');
-        fetchLikedBooks();
-    }
+    // componentDidUpdate() {
+    //     console.log('my books container updated', this.props);
+    //     //fetchLikedBooks();
+    //     this.props.getLikedBooks()
+    // }
 
     render() {
         return(
@@ -25,4 +27,10 @@ const mapStateToProps = state => {
     return { likedBooks: state.likedBooks }
 }
 
-export default connect(mapStateToProps)(MyBooksContainer);
+const mapDispatchToProps = dispatch => {
+    return {
+        getLikedBooks: () => dispatch(fetchLikedBooks())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MyBooksContainer);

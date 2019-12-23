@@ -1,11 +1,17 @@
 import React from 'react';
 import fetchLikedBooks from '../actions/fetchLikedBooks';
+import { connect } from 'react-redux';
 
-export default class MyBooksContainer extends React.Component {
+class MyBooksContainer extends React.Component {
 
     componentDidMount() {
-        console.log('my books container mounted')
+      console.log('my books container mounted')
       fetchLikedBooks();
+    }
+
+    componentDidUpdate() {
+        console.log('my books container updated');
+        fetchLikedBooks();
     }
 
     render() {
@@ -14,3 +20,9 @@ export default class MyBooksContainer extends React.Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return { likedBooks: state.likedBooks }
+}
+
+export default connect(mapStateToProps)(MyBooksContainer);

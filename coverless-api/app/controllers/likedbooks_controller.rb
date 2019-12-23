@@ -3,7 +3,6 @@ require 'pry'
 class LikedbooksController < ApplicationController
 
     def create
-      #binding.pry
         liked_book = LikedBook.new(
             isbn: liked_book_params["primary_isbn10"], 
             title: liked_book_params["title"], 
@@ -24,9 +23,13 @@ class LikedbooksController < ApplicationController
         render json: liked_books
     end
 
+    def destroy
+      binding.pry
+    end
+
 
     private
     def liked_book_params
-      params.permit("primary_isbn10", "title", "author", "description", "book_uri", "book_image")
+      params.permit("primary_isbn10", "title", "author", "description", "book_uri", "book_image", "isbn")
     end
 end

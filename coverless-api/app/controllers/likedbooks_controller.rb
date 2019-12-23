@@ -11,7 +11,7 @@ class LikedbooksController < ApplicationController
             url: liked_book_params["book_uri"],
             image: liked_book_params["book_image"]
             )
-            
+
         if liked_book.save
           render json: liked_book
         end
@@ -23,7 +23,10 @@ class LikedbooksController < ApplicationController
     end
 
     def destroy
-      binding.pry
+      #binding.pry
+      book = LikedBook.find_by(isbn: params["isbn"])
+      book.destroy
+      render json: LikedBook.all
     end
 
 

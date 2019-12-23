@@ -11,10 +11,9 @@ class LikedbooksController < ApplicationController
             url: liked_book_params["book_uri"],
             image: liked_book_params["book_image"]
             )
+            
         if liked_book.save
           render json: liked_book
-        else
-          binding.pry
         end
     end
 

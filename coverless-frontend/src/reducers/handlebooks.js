@@ -1,4 +1,4 @@
-const handleBooks = (state = { books: [], lists: [], currentList: '', requesting: false }, action) => {
+const handleBooks = (state = { books: [], lists: [], currentList: '', likedBooks: [], requesting: false }, action) => {
     switch(action.type){
         case 'START_FETCHING_NEW_USER_REQ':
             return {...state, requesting: true }
@@ -6,9 +6,9 @@ const handleBooks = (state = { books: [], lists: [], currentList: '', requesting
             return {...state, books: [...state.books], currentList: action.listName, requesting: true}
         case 'START_FETCHING_LISTS':
             return {...state, requesting: true }
-        case 'START_FETCHING_LIKED_BOOKS':
+        case 'START_FETCHING_LIKED_BOOKS_REQUEST':
             console.log('starting to fetch liked books')
-            return {...state, requesting: true }
+            return {...state, likedBooks: [...state.likedBooks], requesting: true }
         case 'ADD_LISTS':
             return {...state, requesting: false, lists: action.listData }
         case 'ADD_BOOKS':
@@ -20,6 +20,9 @@ const handleBooks = (state = { books: [], lists: [], currentList: '', requesting
             let likedBook = state.books.find(b => b.primary_isbn10 === action.book.isbn)
             likedBook.liked = true;
             return {...state}
+        case 'ADD_LIKED_BOOKS':
+            console.log('in reducer adding liked books data')
+            return {...state, likedBooks: action.likedBooks, requesting: false }
         case 'ADD_USER':
             return {...state, currentUser: action.user }
         case 'UPDATE_CURRENT_LIST':

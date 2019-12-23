@@ -10,9 +10,10 @@ import handleBooks from './reducers/handlebooks';
 import thunk from 'redux-thunk';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const store = createStore(handleBooks, applyMiddleware(thunk));
-
 const BASE_URL = 'http://localhost:3000/';
+
+
+const store = createStore(handleBooks, applyMiddleware(thunk));
 
 
 ReactDOM.render(

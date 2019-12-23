@@ -1,21 +1,28 @@
-//this function is reached properly, but the code within the return doesn't seem to be running - why?
-import BASE_URL from '../index';
+// export default function fetchlikedbooks() {
+//     console.log('in fetchLikedBooks fn');
+//     return (dispatch) => {
+//         dispatch({ type: 'START_FETCHING_LIKED_BOOKS_REQUEST' })
+//         fetch(`${BASE_URL}likedbooks`)
+//           .then(response => response.json())
+//         //   .then(likedBooks => dispatch({ type: 'ADD_LIKED_BOOKS', likedBooks}))
+//           .then(data => console.log('results of fetchLikedBooks', data))
+//     };
+// }
 
-export default function fetchlikedbooks() {
+export default function fetchLikedBooks() {
     console.log('in fetchLikedBooks fn');
     return (dispatch) => {
         dispatch({ type: 'START_FETCHING_LIKED_BOOKS_REQUEST' })
-        fetch(`${BASE_URL}likedbooks`)
-          .then(response => response.json())
-          .then(likedBooks => dispatch({ type: 'ADD_LIKED_BOOKS', likedBooks}))
-    };
+        fetch('http://localhost:3000/likedbooks', {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        })
+        .then(response => response.json())
+        //.then(data => console.log('results of fetchlikedbooks', data))
+        .then(likedBooks => dispatch({ type: 'ADD_LIKED_BOOKS', likedBooks}))
+        .catch(error => console.log(error.message))
+    }
 }
-
-// export function fetchAstronauts() {
-//     return (dispatch) => {
-//       dispatch({ type: 'START_ADDING_ASTRONAUTS_REQUEST' });
-//       fetch('http://api.open-notify.org/astros.json')
-//         .then(response => response.json())
-//         .then(astronauts => dispatch({ type: 'ADD_ASTRONAUTS', astronauts }));
-//     };
-//   }

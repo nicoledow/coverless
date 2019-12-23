@@ -1,24 +1,18 @@
 import React from 'react';
 import fetchLikedBooks from '../actions/fetchLikedBooks';
 import { connect } from 'react-redux';
+import LikedBook from '../Components/LikedBook';
 
 class MyBooksContainer extends React.Component {
 
     componentDidMount() {
       console.log('my books container mounted', this.props)
-      //fetchLikedBooks();
       this.props.getLikedBooks();
     }
 
-    // componentDidUpdate() {
-    //     console.log('my books container updated', this.props);
-    //     //fetchLikedBooks();
-    //     this.props.getLikedBooks()
-    // }
-
     render() {
         return(
-            <p>MyBooksContainer</p>
+            this.props.likedBooks.map(b => <LikedBook data={b} />)
         )
     }
 }

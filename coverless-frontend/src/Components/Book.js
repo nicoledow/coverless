@@ -16,7 +16,6 @@ export default class Book extends React.Component {
               <div className="card-body">
                   <p>By {this.props.data.author}</p>
                   <p>{this.props.data.description}</p>
-                  <ReviewsContainer />
                   <ReactionButtons 
                   bookKey={this.props.key} 
                   book={this.props.data} 

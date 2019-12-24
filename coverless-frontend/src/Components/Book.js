@@ -3,13 +3,10 @@
 
 import React from 'react';
 import ReactionButtons from './ReactionButtons';
-import ReviewsContainer from '../Containers/ReviewsContainer';
-
 export default class Book extends React.Component {
 
 
     render() {
-        console.log(this.props)
         return (
             <div className="card">
               <div className="card-header">{this.props.data.title}</div>
@@ -21,7 +18,6 @@ export default class Book extends React.Component {
                   book={this.props.data} 
                   handleLikeBook={this.props.handleLikeBook} 
                   handleRejectBook={this.props.handleRejectBook}/>
-
               </div>
             </div>
         )

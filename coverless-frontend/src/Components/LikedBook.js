@@ -1,6 +1,5 @@
 import React from 'react';
 import RemoveButton from './RemoveButton';
-import { Link } from 'react-router-dom';
 
 export default class LikedBook extends React.Component {
 

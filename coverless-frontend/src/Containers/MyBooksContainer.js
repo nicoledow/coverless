@@ -10,10 +10,6 @@ class MyBooksContainer extends React.Component {
       this.props.getLikedBooks();
     }
 
-    componentDidUpdate() {
-        console.log('mybookscontainer did update')
-    }
-
     render() {
         return(
             this.props.likedBooks.map(b => <LikedBook data={b} />)

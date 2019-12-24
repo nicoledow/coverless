@@ -3,13 +3,15 @@ require 'pry'
 class LikedbooksController < ApplicationController
 
     def create
+      #binding.pry
         liked_book = LikedBook.new(
             isbn: liked_book_params["primary_isbn10"], 
             title: liked_book_params["title"], 
             author: liked_book_params["author"],
             blurb: liked_book_params["description"],
             url: liked_book_params["book_uri"],
-            image: liked_book_params["book_image"]
+            image: liked_book_params["book_image"],
+            amazon_url: liked_book_params["amazon_product_url"]
             )
 
         if liked_book.save
@@ -32,6 +34,6 @@ class LikedbooksController < ApplicationController
 
     private
     def liked_book_params
-      params.permit("primary_isbn10", "title", "author", "description", "book_uri", "book_image", "isbn")
+      params.permit("primary_isbn10", "title", "author", "description", "book_uri", "book_image", "isbn", "amazon_product_url")
     end
 end

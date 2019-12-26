@@ -1,3 +1,5 @@
+//holds books from store and maps over them, creating a card for the current book
+
 import React from 'react';
 import { connect } from 'react-redux';
 import fetchBooks from '../actions/fetchBooks';
@@ -13,8 +15,6 @@ class BooksContainer extends React.Component {
         }
     }
 
-
-    //initiates postLikedBook, which starts a post fetch request to API
     handleLikeBook = book => {
         this.setState((prevState) => ({
             currentBookIndex: prevState.currentBookIndex + 1

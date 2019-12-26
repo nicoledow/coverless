@@ -1,3 +1,5 @@
+//renders a card for each book marked as 'liked' (fetched from /likedbooks in the backend)
+
 import React from 'react';
 import fetchLikedBooks from '../actions/fetchLikedBooks';
 import { connect } from 'react-redux';

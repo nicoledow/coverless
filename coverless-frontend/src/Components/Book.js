@@ -1,5 +1,6 @@
-//has props: book (and associated data), key (primary_isbn10)
-//callback fns: handleLikeBook, handleRejectBook
+/*has props: book (and associated data), key (primary_isbn10)
+has callback functions: handleLikeBook, handleRejectBook
+renders a card with title, info blurb, and like/reject buttons*/
 
 import React from 'react';
 import ReactionButtons from './ReactionButtons';

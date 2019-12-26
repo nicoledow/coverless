@@ -1,10 +1,11 @@
+//renders a card with book title, author, blurb, and a link to buy it on Amazon
+
 import React from 'react';
 import RemoveButton from './RemoveButton';
 
 export default class LikedBook extends React.Component {
 
     render() {
-        console.log('liked book comp', this.props)
         let book = this.props.data;
         let book_url = book.amazon_url;
         return (

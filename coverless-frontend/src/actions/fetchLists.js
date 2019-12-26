@@ -1,3 +1,5 @@
+//fetches names and links of all NYT lists and adds them to the store
+
 export default function fetchLists () {
     return (dispatch) => {
         dispatch({ type: 'START_FETCHING_LISTS' });

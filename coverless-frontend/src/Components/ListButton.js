@@ -1,3 +1,5 @@
+//renders a button with a link to swipe through all books on that list
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
@@ -10,7 +12,6 @@ class ListButton extends React.Component {
     }
 
     handleClick = () => {
-      console.log('handle click')
       this.props.getBooks(this.props.list.list_name_encoded);
     }
 

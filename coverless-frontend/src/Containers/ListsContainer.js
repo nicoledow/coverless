@@ -1,3 +1,5 @@
+//holds a list of links to all of the NYT book lists
+
 import React from 'react';
 import fetchLists from '../actions/fetchLists';
 import { connect } from 'react-redux';

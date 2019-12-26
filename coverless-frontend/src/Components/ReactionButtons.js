@@ -1,5 +1,6 @@
-//inherits prop 'book' and associated data
-//callback fns: handleLikeBook, handleRejectBook
+/*inherits prop 'book' and associated data
+has callback functions: handleLikeBook, handleRejectBook
+heart button will start a post request to /likedbooks in the backend*/
 
 import React from 'react';
 

@@ -1,5 +1,6 @@
+//gets all liked_books in the api and adds the data to the store
+
 export default function fetchLikedBooks() {
-    console.log('in fetchLikedBooks fn');
     return (dispatch) => {
         dispatch({ type: 'START_FETCHING_LIKED_BOOKS_REQUEST' })
         fetch('http://localhost:3000/likedbooks', {

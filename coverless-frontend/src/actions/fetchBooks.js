@@ -1,3 +1,5 @@
+//fetches all books from the listName passed in and adds the data to the store
+
 export default function fetchBooks(listName) {
     return (dispatch) => {
         dispatch({ type: 'START_ADDING_BOOKS_REQ', listName });

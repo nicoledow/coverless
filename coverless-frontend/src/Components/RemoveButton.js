@@ -1,3 +1,5 @@
+//button launches a delete request to /likedbooks/:isbn
+
 import React from 'react';
 import removeLikedBook from '../actions/removeLikedBook';
 import { connect } from 'react-redux';

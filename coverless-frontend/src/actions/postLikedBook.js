@@ -1,3 +1,5 @@
+//sends a post request to the backend and to instantiate a LikedBook
+
 import BASE_URL from '../index';
 
 const postLikedBook = book => {

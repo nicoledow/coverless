@@ -34,6 +34,7 @@ class BooksContainer extends React.Component {
             let books = this.props.books[0];
             let currentBook = books[this.state.currentBookIndex];
             if (this.state.currentBookIndex < books.length) {
+                console.log('book data', currentBook)
                 return <Book data={currentBook} key={currentBook.primary_isbn10} handleLikeBook={this.handleLikeBook} handleRejectBook={this.handleRejectBook} />
             } else {
                 return (<p>You've finished this list! Pick a new one!</p>)

@@ -14,17 +14,10 @@ font-family: 'Archivo Black', sans-serif; */
 
 .App {
   text-align: center;
-  background-color: #F7A072;
-  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html, body, #root, #root>div {
+  height: 100%;
 }
 
 
@@ -44,7 +37,7 @@ h1 {
 
 h2, h3, h4 {
   font-family: 'Crimson Text', serif; 
-  color: #D9E5D6;
+  color: #FF9B42
 }
 
 ul {

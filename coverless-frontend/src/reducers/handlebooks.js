@@ -21,6 +21,8 @@ const handleBooks = (state = { books: [], lists: [], currentList: '', likedBooks
         case 'REMOVE_FROM_LIKED_BOOKS':
             let filteredLikedBooks = state.likedBooks.filter(b => b.isbn !== action.isbn)
             return {...state, likedBooks: filteredLikedBooks, requesting: false }
+        case 'BEGIN_MARKING_AS_READ_REQ':
+            return {...state, requesting: true }
         default:
             return state;
     }

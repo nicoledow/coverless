@@ -2,6 +2,7 @@
 
 import React from 'react';
 import RemoveButton from './RemoveButton';
+import FinishButton from './FinishButton';
 
 export default class LikedBook extends React.Component {
 
@@ -12,6 +13,7 @@ export default class LikedBook extends React.Component {
             <div className="card">
                 <div className="card-header">{book.title} 
                 <br/> by {book.author}
+                <FinishButton isbn={book.isbn} />
                 <RemoveButton isbn={book.isbn}/>
                 </div>
                 <div className="card-body">

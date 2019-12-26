@@ -3,7 +3,6 @@ require 'pry'
 class LikedbooksController < ApplicationController
 
     def create
-      #binding.pry
         liked_book = LikedBook.new(
             isbn: liked_book_params["primary_isbn10"], 
             title: liked_book_params["title"], 
@@ -22,6 +21,10 @@ class LikedbooksController < ApplicationController
     def index
         liked_books = LikedBook.all
         render json: liked_books
+    end
+
+    def update
+      binding.pry
     end
 
     def destroy

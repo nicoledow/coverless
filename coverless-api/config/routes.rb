@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/likedbooks', to: 'likedbooks#index'
   post '/likedbooks', to: 'likedbooks#create'
   delete '/likedbooks/:isbn', to: 'likedbooks#destroy'
+  patch '/likedbooks/:isbn', to: 'likedbooks#update'
 end

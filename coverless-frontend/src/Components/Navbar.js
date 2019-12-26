@@ -1,8 +1,5 @@
 import React from 'react';
-import { Route, Link, Switch, BrowserRouter as Router } from 'react-router-dom';
-import ListsContainer from '../Containers/ListsContainer';
-import MyBooksContainer from '../Containers/MyBooksContainer';
-import BooksContainer from '../Containers/BooksContainer';
+import { Link, BrowserRouter as Router } from 'react-router-dom';
 
 const Navbar = () => {
     return (

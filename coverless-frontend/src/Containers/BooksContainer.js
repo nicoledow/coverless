@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import fetchBooks from '../actions/fetchBooks';
 import postLikedBook from '../actions/postLikedBook';
 import Book from '../Components/Book';
+import { Redirect } from 'react-router-dom';
 
 
 class BooksContainer extends React.Component {
@@ -39,7 +40,7 @@ class BooksContainer extends React.Component {
                 return (<p>You've finished this list! Pick a new one!</p>)
             }
         } else {
-            return <p>Loading books...</p>
+            return <Redirect to="/" />
         }
       }
 }

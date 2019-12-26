@@ -12,7 +12,7 @@ class RemoveButton extends React.Component {
     }
 
     render() {
-        return <button onClick={this.handleClick} className="btn btn-info">X</button>
+        return <button onClick={this.handleClick} className="btn btn-small">X</button>
     }
 }
 

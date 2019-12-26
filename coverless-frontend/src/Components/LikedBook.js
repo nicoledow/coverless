@@ -10,12 +10,14 @@ export default class LikedBook extends React.Component {
         let book_url = book.amazon_url;
         return (
             <div className="card">
-                <div className="card-header">{book.title} <br/> by {book.author}</div>
+                <div className="card-header">{book.title} 
+                <br/> by {book.author}
+                <RemoveButton isbn={book.isbn}/>
+                </div>
                 <div className="card-body">
                     <p>{book.blurb}</p>
+                    <button className="btn btn-info"><a href={book_url} target="_blank">Buy on Amazon</a></button>
                 </div>
-                <button className="btn btn-info"><a href={book_url} target="_blank">Buy on Amazon</a></button>
-                <RemoveButton isbn={book.isbn}/>
             </div>
         )
     }

@@ -13,7 +13,9 @@ class MyBooksContainer extends React.Component {
 
     render() {
         return(
-            this.props.likedBooks.map(b => <LikedBook data={b} />)
+            <div className="contianer">
+              {this.props.likedBooks.map(b => <LikedBook data={b} />)}
+            </div>
         )
     }
 }

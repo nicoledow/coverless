@@ -15,16 +15,7 @@ font-family: 'Archivo Black', sans-serif; */
 .App {
   text-align: center;
   background-color: #F7A072;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-
-.App-link {
-  color: #61dafb;
+  height: 100%;
 }
 
 @keyframes App-logo-spin {
@@ -35,6 +26,7 @@ font-family: 'Archivo Black', sans-serif; */
     transform: rotate(360deg);
   }
 }
+
 
 .card-content {
   background-color: #0FA3B1;
@@ -72,6 +64,7 @@ ul {
 div.card-body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: #0FA3B1;
+  margin: 2em;
 }
 
 button.btn-info a {

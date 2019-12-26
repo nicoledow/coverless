@@ -2,16 +2,19 @@
 teal: #0FA3B1
 light seafoam: #D9E5D6
 yellow cream: #EADEA4
-peach: #F7AO72 - O or 0?
+peach: #F7A072
 orange: #FF9B42
 */
 
-#root, footer {
-  background-color: #D9E5D6;
-}
+/* fonts:
+font-family: 'Crimson Text', serif;
+font-family: 'Frank Ruhl Libre', serif;
+font-family: 'Archivo Black', sans-serif; */
+
 
 .App {
   text-align: center;
+  background-color: #F7A072;
 }
 
 .App-logo {
@@ -59,9 +62,19 @@ orange: #FF9B42
 }
 
 h1 {
-  color: #FF9B42
+  color: #0FA3B1;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+h2, h3, h4 {
+  font-family: 'Crimson Text', serif; 
+  color: #D9E5D6;
 }
 
 ul {
   list-style-type: none;
+}
+
+.card {
+  margin: 2em;
 }

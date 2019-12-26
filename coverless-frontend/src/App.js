@@ -13,7 +13,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App container-fluid">
         <h1>Coverless</h1>
         <h2>Don't pick a book by its cover.</h2>
         <Router>

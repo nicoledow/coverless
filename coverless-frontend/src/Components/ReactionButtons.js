@@ -6,8 +6,6 @@ import React from 'react';
 export default class ReactionButtons extends React.Component {
 
     likeBook = () => {
-        console.log('made it to ReactionButtons likeBook')
-        console.log('this.props', this.props)
         this.props.handleLikeBook(this.props.book);
     }
 

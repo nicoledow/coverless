@@ -6,6 +6,5 @@ export default function fetchLists () {
         .then(listData => {
             dispatch({ type: 'ADD_LISTS', listData: listData.results })
         })
-        .catch(error => console.log(error.message))
     }
 }

@@ -6,7 +6,6 @@ import LikedBook from '../Components/LikedBook';
 class MyBooksContainer extends React.Component {
 
     componentDidMount() {
-      console.log('my books container mounted', this.props)
       this.props.getLikedBooks();
     }
 

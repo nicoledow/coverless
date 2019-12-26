@@ -11,6 +11,5 @@ export default function fetchLikedBooks() {
         })
         .then(response => response.json())
         .then(likedBooks => dispatch({ type: 'ADD_LIKED_BOOKS', likedBooks}))
-        .catch(error => console.log(error.message))
     }
 }

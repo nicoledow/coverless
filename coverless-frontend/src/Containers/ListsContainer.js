@@ -11,7 +11,6 @@ class ListsContainer extends React.Component {
 
  
     render() {
-        console.log('rendering ListContainer')
         if (this.props.lists) {
             if (this.props.lists.length >= 1) {
                 return (

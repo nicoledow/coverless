@@ -25,7 +25,7 @@ const handleBooks = (state = { books: [], lists: [], currentList: '', likedBooks
             return {...state, requesting: true }
         case 'MARK_BOOK_AS_READ':
             let likedUnreadBooks = state.likedBooks.filter(b => b.isbn != action.bookData.isbn);
-            return {...state, likedBooks: likedUnreadBooks, requesting: false }
+            return {...state, likedBooks: likedUnreadBooks, readBooks: [...state.readBooks, action.bookData], requesting: false }
         default:
             return state;
     }

@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   post '/likedbooks', to: 'likedbooks#create'
   delete '/likedbooks/:isbn', to: 'likedbooks#destroy'
   patch '/likedbooks/:isbn', to: 'likedbooks#update'
+
+  post '/reviews', to: 'reviews#create'
 end

@@ -1,4 +1,5 @@
 //has prop 'data' with info on single book
+//this.props.submitReview will dispatch addReview, sending a post request to /reviews
 
 import React from 'react';
 import { connect } from 'react-redux';

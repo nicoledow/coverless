@@ -10,7 +10,8 @@ class LikedbooksController < ApplicationController
             blurb: liked_book_params["description"],
             url: liked_book_params["book_uri"],
             image: liked_book_params["book_image"],
-            amazon_url: liked_book_params["amazon_product_url"]
+            amazon_url: liked_book_params["amazon_product_url"],
+            read: false
             )
 
         if liked_book.save
@@ -25,10 +26,9 @@ class LikedbooksController < ApplicationController
 
     def update
       book = LikedBook.find_by(isbn: params["isbn"])
-      if book
-        book.read = !book.read
-        render json: book
-      end
+      book.read = !book.read
+      book.save
+      render json: book
     end
 
     def destroy

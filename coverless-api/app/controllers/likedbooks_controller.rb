@@ -19,16 +19,19 @@ class LikedbooksController < ApplicationController
     end
 
     def index
-        liked_books = LikedBook.all
+        liked_books = LikedBook.unread
         render json: liked_books
     end
 
     def update
-      binding.pry
+      book = LikedBook.find_by(isbn: params["isbn"])
+      if book
+        book.read = !book.read
+        render json: book
+      end
     end
 
     def destroy
-      #binding.pry
       book = LikedBook.find_by(isbn: params["isbn"])
       book.destroy
       render json: LikedBook.all
@@ -37,6 +40,6 @@ class LikedbooksController < ApplicationController
 
     private
     def liked_book_params
-      params.permit("primary_isbn10", "title", "author", "description", "book_uri", "book_image", "isbn", "amazon_product_url")
+      params.permit("primary_isbn10", "title", "author", "description", "book_uri", "book_image", "isbn", "amazon_product_url", "read")
     end
 end

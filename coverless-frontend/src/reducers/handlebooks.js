@@ -1,4 +1,4 @@
-const handleBooks = (state = { books: [], lists: [], currentList: '', likedBooks: [], requesting: false }, action) => {
+const handleBooks = (state = { books: [], lists: [], currentList: '', likedBooks: [], readBooks: [], requesting: false }, action) => {
     switch(action.type){
         case 'START_ADDING_BOOKS_REQ':
             return {...state, books: [...state.books], currentList: action.listName, requesting: true}
@@ -22,7 +22,13 @@ const handleBooks = (state = { books: [], lists: [], currentList: '', likedBooks
             let filteredLikedBooks = state.likedBooks.filter(b => b.isbn !== action.isbn)
             return {...state, likedBooks: filteredLikedBooks, requesting: false }
         case 'BEGIN_MARKING_AS_READ_REQ':
+            console.log('in reducer begin mark as read req')
             return {...state, requesting: true }
+        case 'MARK_BOOK_AS_READ':
+            console.log('in reducer mark book as read')
+            let updatedUnreadBooks = state.books.filter(b => b.isbn !== action.bookData.isbn);
+            console.log('updatedUnreadBooks', updatedUnreadBooks)
+            return {...state, books: updatedUnreadBooks, readBooks: [...state.readBooks, action.bookData], requesting: false }
         default:
             return state;
     }

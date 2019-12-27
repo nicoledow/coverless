@@ -11,7 +11,8 @@ export default function markAsRead(isbn) {
           body: JSON.stringify({"isbn": isbn, "read": true})
       })
       .then(response => response.json())
-      .then(data => console.log('finished fetch', data))
-      .catch(error => console.log(error.message))
+      .then(bookData => {
+          dispatch({ type: 'MARK_BOOK_AS_READ', bookData })
+      })
     }
 }

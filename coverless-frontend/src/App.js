@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import BooksContainer from './Containers/BooksContainer';
 import MyBooksContainer from './Containers/MyBooksContainer';
+import ReadBooksContainer from './Containers/ReadBooksContainer';
 
 class App extends React.Component {
 
@@ -20,8 +21,9 @@ class App extends React.Component {
         <Navbar />      
         <Switch>
           <Route exact path='/' component={ListsContainer} />
-          <Route path='/mybooks' component={MyBooksContainer} />
-          <Route path='/books' component={BooksContainer} />
+          <Route exact path='/mybooks' component={MyBooksContainer} />
+          <Route exact path='/books' component={BooksContainer} />
+          <Route exact path='/books/read' component={ReadBooksContainer} />
         </Switch> 
         </Router>
       </div>

@@ -5,7 +5,8 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-light">
             <Link to="/mybooks"> <button className="btn btn-info"> My Books </button> </Link>
-            <Link to="/lists"> <button className="btn btn-info"> Browse Lists </button> </Link>
+            <Link to="/books/read"> <button className="btn btn-info"> Books I've Read </button> </Link>
+            <Link to="/"> <button className="btn btn-info"> Browse Lists </button> </Link>
         </nav>
     )
 }

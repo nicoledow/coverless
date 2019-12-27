@@ -11,16 +11,24 @@ class ReviewForm extends React.Component {
         this.state = { value: '' }
     }
 
-    handleOnChange = e => {
+    handleChange = e => {
       this.setState({ value: e.target.value })
+    }
+
+    handleSubmit = e => {
+        //isbn is showing up as undefined - why??
+        
+        e.preventDefault();
+        const content = e.target.querySelector('input').value;
+        this.props.submitReview(this.props.data.isbn, content);
     }
 
     render() {
         return(
             <div className="review-div">
                 <h4>Review this book:</h4>
-                <form>
-                    <input type="textarea" value={this.state.value} onChange={e => this.handleOnChange(e)} />
+                <form onSubmit={e => this.handleSubmit(e)}>
+                    <input type="textarea" value={this.state.value} onChange={e => this.handleChange(e)} />
                     <input type="submit" />
                 </form>
             </div>
@@ -30,7 +38,7 @@ class ReviewForm extends React.Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        submitReview: reviewData => addReview(reviewData)
+        submitReview: (isbn, content) => addReview(isbn, content)
     }
 }
 

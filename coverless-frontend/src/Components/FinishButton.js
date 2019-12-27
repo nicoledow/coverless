@@ -9,7 +9,10 @@ class FinishButton extends React.Component {
     }
 
     render() {
-        return <button onClick={this.handleClick} className="btn btn-small">✔️</button>
+        return (
+        <button onClick={this.handleClick} className="btn btn-small">
+            <span role="img" aria-label="check">✔️</span>
+        </button>)
     }
 }
 

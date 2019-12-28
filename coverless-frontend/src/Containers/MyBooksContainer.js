@@ -14,7 +14,7 @@ class MyBooksContainer extends React.Component {
     render() {
         return(
             <div className="container">
-              {this.props.likedBooks.map(b => <LikedBook data={b} />)}
+              { this.props.likedBooks.length === 0 ? <p>You haven't added any books (yet)!</p> : this.props.likedBooks.map(b => <LikedBook data={b} />)}
             </div>
         )
     }

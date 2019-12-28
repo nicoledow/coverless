@@ -26,11 +26,6 @@ const handleBooks = (state = { books: [], lists: [], currentList: '', likedBooks
         case 'MARK_BOOK_AS_READ':
             let likedUnreadBooks = state.likedBooks.filter(b => b.isbn != action.bookData.isbn);
             return {...state, likedBooks: likedUnreadBooks, readBooks: [...state.readBooks, action.bookData], requesting: false }
-        case 'START_ADDING_REVIEW_REQ':
-            console.log('in reducer - start adding review req')
-            return {...state, requesting: true }
-        case 'ADD_REVIEW':
-            console.log('in handleBooks -- ADD_REVIEW')
         default:
             return state;
     }

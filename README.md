@@ -24,6 +24,7 @@ $cd coverless-frontend
 From here, run the following commands to launch the application in your default browser:
 
 $npm install
+
 $npm start
 
 Rails will default to localhost:3000, and this version of Coverless assumes all fetch requests to the database should be directed to this address. If you use a different port, you will need to update BASE_URL in index.js.

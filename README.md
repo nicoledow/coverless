@@ -3,7 +3,7 @@
 Coverless is a tinder-style application that lets you browse New York Times bestsellers lists and 'like' or 'reject' books based on their description, not their cover. 
 
 ## Build Status and Contributions
-Coverless is a work in progress, and user accounts are coming soon! Contributions and pull requests are welcome.
+Coverless is a work in progress, and user accounts are coming soon! Contributions and pull requests are welcome. Thank you for contributing and helping readers everywhere!
 
 ## Technologies Used
 The frontend of coverless is a Reactjs application, and uses a Rails back end. The database is configured using PostgreSQL.

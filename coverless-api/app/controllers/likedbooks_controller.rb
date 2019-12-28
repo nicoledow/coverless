@@ -26,7 +26,7 @@ class LikedbooksController < ApplicationController
 
     def update
       book = LikedBook.find_by(isbn: params["isbn"])
-      book.read = !book.read
+      book.read = true
       book.save
       render json: book
     end

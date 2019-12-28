@@ -15,4 +15,4 @@ export default function markAsRead(isbn) {
           dispatch({ type: 'MARK_BOOK_AS_READ', bookData })
       })
     }
-}
+} //

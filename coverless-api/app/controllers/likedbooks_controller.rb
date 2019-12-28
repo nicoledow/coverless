@@ -24,6 +24,11 @@ class LikedbooksController < ApplicationController
         render json: liked_books
     end
 
+    def read
+      read_books = LikedBook.read
+      render json: read_books
+    end
+
     def update
       book = LikedBook.find_by(isbn: params["isbn"])
       book.read = true

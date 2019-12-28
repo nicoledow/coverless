@@ -7,5 +7,4 @@ Rails.application.routes.draw do
   delete '/likedbooks/:isbn', to: 'likedbooks#destroy'
   patch '/likedbooks/:isbn', to: 'likedbooks#update'
 
-  post '/reviews/:isbn', to: 'reviews#create'
 end

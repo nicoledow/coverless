@@ -1,5 +1,4 @@
 export default function markAsRead(isbn) {
-    console.log('in markAsRead fn', isbn);
     return (dispatch) => {
       dispatch({ type: 'BEGIN_MARKING_AS_READ_REQ' })
       fetch(`http://localhost:3000/likedbooks/${isbn}`, {

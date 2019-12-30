@@ -10,15 +10,13 @@ import ReadBooksContainer from './Containers/ReadBooksContainer';
 
 class App extends React.Component {
 
-  
-
   render() {
     return (
       <div className="App">
         <h1>Coverless</h1>
         <h2>Don't pick a book by its cover.</h2>
         <Router>
-        <Navbar />      
+        <Navbar />   
         <Switch>
           <Route exact path='/' component={ListsContainer} />
           <Route exact path='/mybooks' component={MyBooksContainer} />

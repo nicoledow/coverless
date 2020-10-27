@@ -13,7 +13,7 @@ Fork and clone Coverless onto your local machine. In one terminal tab, run the f
 
 $cd coverless-api
 
-This will put you into the API directly. From here, you can start your Rails server by typing:
+This will put you into the API directly. If you do not yet have PostgreSQL available on your machine, you will need to do so. From here, you can start your Rails server by typing:
 
 $rails s
 
